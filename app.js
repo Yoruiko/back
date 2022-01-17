@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -17,6 +18,7 @@ mongoose.connect('mongodb+srv://Yoruiko:apqmwn42@cluster0.w2syn.mongodb.net/clus
 const app = express();
 
 // Configuration cors
+app.use(cors())
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
